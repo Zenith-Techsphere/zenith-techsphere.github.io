@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 106">
+  <!-- Horizontal hexagon badge -->
+  <path d="M27,2 L93,2 L118,53 L93,104 L27,104 L2,53 Z" fill="#1A6A9E"/>
+  <!-- Left white ribbon strip (rounded top) -->
+  <path d="M4,34 Q15,7 36,2 L50,2 L22,60 L4,46 Z" fill="white"/>
+  <!-- Right white ribbon strip (rounded bottom) -->
+  <path d="M70,104 L98,48 Q112,54 116,68 L94,104 Z" fill="white"/>
+</svg>

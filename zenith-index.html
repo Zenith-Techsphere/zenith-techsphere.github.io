@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zenith Techsphere — Building Products for India</title>
 <meta name="description" content="Zenith Techsphere is a Hyderabad-based product company building utility software for India. We also run structured product internship programs for fresh graduates.">
+<link rel="icon" type="image/svg+xml" href="zenith-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -376,9 +377,154 @@
   .hero-body { animation: fadeUp 0.7s 0.2s ease both; }
   .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
 
+  /* PRODUCTS */
+  .products { background: var(--off-white); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: border-color 0.2s;
+  }
+  .product-card:hover { border-color: var(--blue-mid); }
+  .product-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .product-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .product-status::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-live { background: #EAF5EA; color: #2D6A2D; }
+  .status-live::before { background: #2D6A2D; }
+  .status-soon { background: var(--blue-light); color: var(--blue); }
+  .status-soon::before { background: var(--blue-mid); }
+  .product-category {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  .product-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .product-tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .product-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 1.75rem;
+  }
+  .product-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 0 1.25rem;
+  }
+  .product-section-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+  }
+  .product-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.75rem;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+  .feature-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  .product-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+  .stack-chip {
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    padding: 0.22rem 0.6rem;
+    border-radius: 2px;
+  }
+  .product-cta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .product-platform-note {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--text-light);
+  }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .what-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
     .nav-links { display: none; }
     .intern-banner-inner { flex-direction: column; text-align: center; }
@@ -389,11 +535,12 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Zenith<span>.</span>Techsphere</a>
+  <a href="zenith-index.html" class="nav-logo"><img src="zenith-logo.svg" alt="Zenith" style="height:28px;width:auto;vertical-align:middle;margin-right:0.5rem;">Zenith<span>.</span>Techsphere</a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#what-we-do">What we do</a>
-    <a href="internship" class="nav-cta">Internship Program</a>
+    <a href="#products">Products</a>
+    <a href="zenith-internship.html" class="nav-cta">Internship Program</a>
   </div>
 </nav>
 
@@ -405,7 +552,7 @@
       <p class="hero-body">Zenith Techsphere is a registered product company focused on building practical, revenue-generating utility software for Indian users and businesses. We move fast, ship real products, and solve problems that are too small for large companies to care about — but too important for people to ignore.</p>
       <div class="hero-actions">
         <a href="#what-we-do" class="btn-primary">What we build</a>
-        <a href="internship" class="btn-secondary">Internship Program →</a>
+        <a href="zenith-internship.html" class="btn-secondary">Internship Program →</a>
       </div>
     </div>
   </section>
@@ -460,13 +607,108 @@
     </div>
   </section>
 
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-eyebrow">Our Products</div>
+      <h2 class="section-title">Software we've shipped</h2>
+      <p class="section-body">From hyperlocal community tools to AI-powered career platforms — each product is built to solve a specific, validated problem.</p>
+
+      <div class="products-grid">
+
+        <!-- BookShare -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <div>
+              <div class="product-category">Mobile App · Social / Marketplace</div>
+              <div class="product-name">BookShare</div>
+            </div>
+            <div class="product-status status-soon">Coming Soon</div>
+          </div>
+
+          <div class="product-tagline">A hyperlocal book-lending platform that turns idle bookshelves into a community library.</div>
+          <p class="product-desc">BookShare lets members of a community lend and borrow physical books within trusted social circles — a residential society, friend group, or book club. It handles the full transaction lifecycle from borrow request to return, with OTP-verified handovers, optional lending fees, due dates, and real-time in-transaction chat.</p>
+
+          <hr class="product-divider">
+          <div class="product-section-label">Key Features</div>
+          <div class="product-features">
+            <div class="feature-item"><div class="feature-dot"></div>Borrow &amp; lend physical books within your community or social circle</div>
+            <div class="feature-item"><div class="feature-dot"></div>OTP-verified handovers with optional lending fees and due dates</div>
+            <div class="feature-item"><div class="feature-dot"></div>Real-time in-transaction chat with typing indicators and read receipts</div>
+            <div class="feature-item"><div class="feature-dot"></div>Barcode &amp; ISBN scanning for instant book listings</div>
+            <div class="feature-item"><div class="feature-dot"></div>Mutual ratings, group-based discovery, and push notifications</div>
+          </div>
+
+          <hr class="product-divider">
+          <div class="product-section-label">Tech Stack</div>
+          <div class="product-stack">
+            <span class="stack-chip">Android</span>
+            <span class="stack-chip">Jetpack Compose</span>
+            <span class="stack-chip">CameraX + ML Kit</span>
+            <span class="stack-chip">Node.js</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">PostgreSQL</span>
+            <span class="stack-chip">Prisma</span>
+            <span class="stack-chip">Socket.IO</span>
+          </div>
+
+          <hr class="product-divider">
+          <div class="product-cta">
+            <span class="product-platform-note">Coming soon on Play Store &amp; App Store</span>
+          </div>
+        </div>
+
+        <!-- InterviewOS -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <div>
+              <div class="product-category">Web App · EdTech / Career</div>
+              <div class="product-name">InterviewOS</div>
+            </div>
+            <div class="product-status status-live">Live</div>
+          </div>
+
+          <div class="product-tagline">AI-powered interview preparation — personalized, structured, and trackable.</div>
+          <p class="product-desc">InterviewOS generates a personalized week-by-week interview prep curriculum in under 30 seconds using Claude AI. Calibrated to the user's target role, company tier, timeline, and weak areas — covering DSA, system design, behavioral prep, and mock interviews — with daily progress tracking via a readiness score, streak counter, and heatmap.</p>
+
+          <hr class="product-divider">
+          <div class="product-section-label">Key Features</div>
+          <div class="product-features">
+            <div class="feature-item"><div class="feature-dot"></div>AI-generated week-by-week prep plan in under 30 seconds</div>
+            <div class="feature-item"><div class="feature-dot"></div>Daily task engine with readiness score, streaks, and activity heatmap</div>
+            <div class="feature-item"><div class="feature-dot"></div>Covers DSA, system design, behavioral prep, and mock interviews</div>
+            <div class="feature-item"><div class="feature-dot"></div>Pro: ATS Resume Analyser, Interview Tracker, unlimited notes with file uploads</div>
+            <div class="feature-item"><div class="feature-dot"></div>Pro: AI daily email briefings and interview day reminders</div>
+          </div>
+
+          <hr class="product-divider">
+          <div class="product-section-label">Tech Stack</div>
+          <div class="product-stack">
+            <span class="stack-chip">Next.js</span>
+            <span class="stack-chip">Supabase</span>
+            <span class="stack-chip">Stripe</span>
+            <span class="stack-chip">Claude AI</span>
+            <span class="stack-chip">Resend</span>
+            <span class="stack-chip">Render</span>
+          </div>
+
+          <hr class="product-divider">
+          <div class="product-cta">
+            <a href="https://interviewos.zenith-techsphere.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.8rem; padding:0.65rem 1.5rem;">Visit InterviewOS →</a>
+            <span class="product-platform-note">$9/mo Pro · $4.99 one-time pack</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <div class="container">
       <div class="about-inner">
         <div class="about-left">
           <div class="section-eyebrow">About Zenith</div>
           <h2 class="section-title">A small company with a specific point of view</h2>
-          <p class="section-body">Zenith Techsphere Private Limited (CIN: U62091TS2024PTC189853) is registered in India and headquartered in Hyderabad. We are a lean team focused on one thing: building software that solves real problems for real Indians — and training the next generation of Indian product builders to do the same.</p>
+          <p class="section-body">Zenith Techsphere Private Limited is registered in India and headquartered in Hyderabad. We are a lean team focused on one thing: building software that solves real problems for real Indians — and training the next generation of Indian product builders to do the same.</p>
           <br>
           <p class="section-body">We believe the best product ideas are not glamorous. They are the ones that save someone 20 minutes a month, prevent a missed medicine dose, or help a woman running a home tiffin service get paid on time. That is the market we work in.</p>
         </div>
@@ -512,7 +754,7 @@
         <h2>Cohort 1 applications<br>are <em>open now</em></h2>
         <p>20 seats. 8 weeks. A real product, a real certificate, and a real internship tag on your LinkedIn. Top 4 performers get a paid mentor role in Cohort 2.</p>
       </div>
-      <a href="internship" class="btn-accent">View the internship →</a>
+      <a href="zenith-internship.html" class="btn-accent">View the internship →</a>
     </div>
   </div>
 </main>
@@ -521,12 +763,13 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo">Zenith<span>.</span>Techsphere</div>
-      <p class="footer-meta" style="margin-top:0.5rem;">Zenith Techsphere Private Limited<br>Hyderabad, Telangana, India<br>CIN: U62091TS2024PTC189853</p>
+      <p class="footer-meta" style="margin-top:0.5rem;">Zenith Techsphere Private Limited<br>Hyderabad, Telangana, India</p>
     </div>
     <div class="footer-links">
-      <a href="/">Home</a>
+      <a href="zenith-index.html">Home</a>
       <a href="#about">About</a>
-      <a href="internship">Internship</a>
+      <a href="#products">Products</a>
+      <a href="zenith-internship.html">Internship</a>
     </div>
     <p class="footer-meta" style="text-align:right;">© 2026 Zenith Techsphere Pvt. Ltd.<br>All rights reserved.</p>
   </div>
