@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenith Techsphere — Building Products for India</title>
-<meta name="description" content="Zenith Techsphere is a Hyderabad-based product company building utility software for India. We also run structured product internship programs for fresh graduates.">
+<title>Zenith Techsphere — Building Software Products for India</title>
+<meta name="description" content="Zenith Techsphere Private Limited builds focused software products including BookClub Social, Prune, and Medify — practical tools for Indian users, communities, and healthcare workflows.">
+<meta name="theme-color" content="#0D1F35">
+<link rel="canonical" href="https://zenith-techsphere.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zenith Techsphere">
+<meta property="og:title" content="Zenith Techsphere — Building Software Products for India">
+<meta property="og:description" content="Zenith Techsphere Private Limited builds focused software products including BookClub Social, Prune, and Medify — practical tools for Indian users, communities, and healthcare workflows.">
+<meta property="og:url" content="https://zenith-techsphere.com/">
+<meta property="og:image" content="https://zenith-techsphere.com/logo/zenith-symbol.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zenith Techsphere — Building Software Products for India">
+<meta name="twitter:description" content="Zenith Techsphere Private Limited builds focused software products including BookClub Social, Prune, and Medify — practical tools for Indian users, communities, and healthcare workflows.">
+<meta name="twitter:image" content="https://zenith-techsphere.com/logo/zenith-symbol.svg">
 <link rel="icon" type="image/svg+xml" href="logo/zenith-symbol.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -17,6 +29,10 @@
     --blue-mid: #2E6FBF;
     --blue-light: #E8F1FB;
     --accent: #C8A96E;
+    --green: #2D6A2D;
+    --green-light: #EAF5EA;
+    --amber: #8A5A11;
+    --amber-light: #FFF4D8;
     --text: #1A1A1A;
     --text-mid: #555;
     --text-light: #888;
@@ -34,38 +50,61 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* NAV */
+  a { color: inherit; }
+
   nav {
-    position: fixed; top: 0; left: 0; right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
     z-index: 100;
     padding: 0 2rem;
     height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+
   .nav-logo {
     font-family: 'Fraunces', serif;
     font-size: 1.15rem;
     font-weight: 500;
     color: var(--navy);
     text-decoration: none;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
+    display: inline-flex;
+    align-items: center;
   }
+
+  .nav-logo img {
+    height: 28px;
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
   .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 2rem; align-items: center; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
   .nav-links a {
     font-size: 0.875rem;
     font-weight: 400;
     color: var(--text-mid);
     text-decoration: none;
-    letter-spacing: 0.01em;
     transition: color 0.2s;
   }
+
   .nav-links a:hover { color: var(--navy); }
+
   .nav-cta {
-    background: var(--navy) !important;
+    background: var(--navy);
     color: var(--white) !important;
     padding: 0.5rem 1.25rem;
     border-radius: 4px;
@@ -73,19 +112,24 @@
     font-weight: 500 !important;
     transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: var(--blue) !important; color: var(--white) !important; }
 
-  /* HERO */
+  .nav-cta:hover { background: var(--blue); }
+
   .hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 100px 2rem 4rem;
+    min-height: 94vh;
+    display: flex;
+    align-items: center;
+    padding: 110px 2rem 4rem;
     max-width: 1100px;
     margin: 0 auto;
   }
-  .hero-inner { max-width: 680px; }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
+
+  .hero-inner { max-width: 720px; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
@@ -93,152 +137,183 @@
     color: var(--blue-mid);
     margin-bottom: 2rem;
   }
-  .hero-eyebrow::before {
+
+  .eyebrow::before {
     content: '';
     display: block;
-    width: 24px; height: 1px;
+    width: 24px;
+    height: 1px;
     background: var(--blue-mid);
   }
-  .hero h1 {
+
+  h1, h2, h3 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 300;
-    line-height: 1.1;
     color: var(--navy);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    font-weight: 300;
+    line-height: 1.08;
     margin-bottom: 1.75rem;
   }
+
   .hero h1 em {
     font-style: italic;
     color: var(--accent);
   }
+
   .hero-body {
     font-size: 1.05rem;
     font-weight: 300;
     line-height: 1.75;
     color: var(--text-mid);
     margin-bottom: 2.5rem;
-    max-width: 520px;
+    max-width: 610px;
   }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--navy);
-    color: var(--white);
-    padding: 0.85rem 2rem;
+
+  .hero-body + .hero-body {
+    margin-top: -1.25rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.85rem 1.75rem;
     border-radius: 4px;
     font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-block;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
   }
-  .btn-primary:hover { background: var(--blue); transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: var(--blue);
+    transform: translateY(-1px);
+  }
+
   .btn-secondary {
     border: 1px solid var(--border);
     color: var(--navy);
-    padding: 0.85rem 2rem;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    font-weight: 400;
-    text-decoration: none;
-    transition: border-color 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-  .btn-secondary:hover { border-color: var(--navy); transform: translateY(-1px); }
-
-  .hero-aside {
-    margin-left: auto;
-    display: none;
   }
 
-  /* STRIP */
+  .btn-secondary:hover {
+    border-color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  .btn-accent {
+    background: var(--accent);
+    color: var(--navy);
+  }
+
+  .btn-accent:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
   .strip {
     background: var(--navy);
-    padding: 1.25rem 2rem;
+    padding: 1.35rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
   }
+
   .strip-item {
     text-align: center;
     color: var(--white);
   }
+
   .strip-item strong {
     display: block;
     font-family: 'Fraunces', serif;
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     font-weight: 400;
     color: var(--accent);
     line-height: 1;
     margin-bottom: 0.3rem;
   }
+
   .strip-item span {
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.58);
   }
 
-  /* SECTION BASE */
   section { padding: 6rem 2rem; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-eyebrow {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--blue-mid);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.5rem;
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
   }
-  .section-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue-mid); }
+
   .section-title {
-    font-family: 'Fraunces', serif;
     font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 300;
-    color: var(--navy);
-    letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 1.25rem;
   }
+
   .section-body {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.75;
     color: var(--text-mid);
-    max-width: 560px;
+    max-width: 620px;
   }
 
-  /* WHAT WE DO */
   .what { background: var(--off-white); }
+
   .what-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--border);
     margin-top: 4rem;
     border: 1px solid var(--border);
   }
+
   .what-item {
     background: var(--white);
-    padding: 2.5rem;
+    padding: 2.25rem;
   }
+
   .what-num {
     font-family: 'Fraunces', serif;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 300;
     color: var(--blue-light);
     line-height: 1;
     margin-bottom: 1.25rem;
   }
+
   .what-title {
     font-size: 1rem;
     font-weight: 500;
     color: var(--navy);
     margin-bottom: 0.75rem;
   }
+
   .what-body {
     font-size: 0.875rem;
     font-weight: 300;
@@ -246,185 +321,38 @@
     color: var(--text-mid);
   }
 
-  /* ABOUT */
-  .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  .about-left .section-body { max-width: 100%; }
-  .about-values {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1px solid var(--border);
-  }
-  .about-value {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .about-value:last-child { border-bottom: none; }
-  .value-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 0.45rem;
-  }
-  .value-title {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.25rem;
-  }
-  .value-body {
-    font-size: 0.8rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: var(--text-mid);
-  }
+  .products { background: var(--white); }
 
-  /* INTERNSHIP CTA BANNER */
-  .intern-banner {
-    background: var(--navy);
-    padding: 5rem 2rem;
-  }
-  .intern-banner-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .intern-banner h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 300;
-    color: var(--white);
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-  }
-  .intern-banner h2 em { color: var(--accent); font-style: italic; }
-  .intern-banner p {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.6);
-    max-width: 440px;
-  }
-  .btn-accent {
-    background: var(--accent);
-    color: var(--navy);
-    padding: 0.9rem 2.25rem;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: opacity 0.2s, transform 0.15s;
-    display: inline-block;
-  }
-  .btn-accent:hover { opacity: 0.9; transform: translateY(-1px); }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 3rem 2rem;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .footer-logo {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--navy);
-  }
-  .footer-logo span { color: var(--accent); }
-  .footer-meta {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    line-height: 1.6;
-  }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a {
-    font-size: 0.8rem;
-    color: var(--text-mid);
-    text-decoration: none;
-  }
-  .footer-links a:hover { color: var(--navy); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-  .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
-  .hero-body { animation: fadeUp 0.7s 0.2s ease both; }
-  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
-
-  /* PRODUCTS */
-  .products { background: var(--off-white); }
   .products-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
     margin-top: 4rem;
   }
+
   .product-card {
     background: var(--white);
     border: 1px solid var(--border);
-    padding: 2.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    transition: border-color 0.2s;
+    min-height: 100%;
+    transition: border-color 0.2s, transform 0.15s;
   }
-  .product-card:hover { border-color: var(--blue-mid); }
+
+  .product-card:hover {
+    border-color: var(--blue-mid);
+    transform: translateY(-2px);
+  }
+
   .product-card-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem;
   }
-  .product-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.7rem;
-    border-radius: 2px;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-  }
-  .product-status::before {
-    content: '';
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .status-live { background: #EAF5EA; color: #2D6A2D; }
-  .status-live::before { background: #2D6A2D; }
-  .status-soon { background: var(--blue-light); color: var(--blue); }
-  .status-soon::before { background: var(--blue-mid); }
+
   .product-category {
     font-size: 0.68rem;
     font-weight: 500;
@@ -433,175 +361,385 @@
     color: var(--text-light);
     margin-bottom: 0.5rem;
   }
+
   .product-name {
     font-family: 'Fraunces', serif;
     font-size: 1.75rem;
     font-weight: 400;
     color: var(--navy);
-    letter-spacing: -0.02em;
     line-height: 1.15;
-    margin-bottom: 0.5rem;
   }
+
+  .product-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.32rem 0.62rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    white-space: nowrap;
+  }
+
+  .product-status::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-live {
+    background: var(--green-light);
+    color: var(--green);
+  }
+
+  .status-live::before { background: var(--green); }
+
+  .status-test {
+    background: var(--amber-light);
+    color: var(--amber);
+  }
+
+  .status-test::before { background: var(--amber); }
+
   .product-tagline {
     font-family: 'Fraunces', serif;
     font-style: italic;
     font-size: 0.95rem;
     font-weight: 300;
     color: var(--accent);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
     line-height: 1.5;
   }
+
   .product-desc {
     font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.75;
     color: var(--text-mid);
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.35rem;
   }
-  .product-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 0 0 1.25rem;
-  }
-  .product-section-label {
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 0.75rem;
-  }
-  .product-features {
+
+  .product-facts {
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
-    margin-bottom: 1.75rem;
-  }
-  .feature-item {
-    display: flex;
-    align-items: flex-start;
     gap: 0.6rem;
-    font-size: 0.8rem;
-    font-weight: 300;
-    color: var(--text-mid);
-    line-height: 1.55;
+    padding: 1.1rem 0;
+    margin: auto 0 1.1rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
-  .feature-dot {
-    width: 4px; height: 4px;
+
+  .product-fact {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--text-mid);
+  }
+
+  .product-fact::before {
+    content: '';
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--accent);
     flex-shrink: 0;
-    margin-top: 0.45rem;
+    margin-top: 0.5rem;
   }
-  .product-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.75rem;
-  }
-  .stack-chip {
-    font-size: 0.68rem;
-    font-weight: 400;
-    color: var(--text-mid);
-    background: var(--off-white);
-    border: 1px solid var(--border);
-    padding: 0.22rem 0.6rem;
-    border-radius: 2px;
-  }
+
   .product-cta {
-    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
   }
-  .product-platform-note {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: var(--text-light);
+
+  .product-cta .btn-primary {
+    min-height: 40px;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
   }
 
-  /* RESPONSIVE */
+  .product-note {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .about { background: var(--off-white); }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-copy p + p {
+    margin-top: 1.2rem;
+  }
+
+  .principles {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .principle {
+    padding: 1.35rem 1.7rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .principle:last-child { border-bottom: none; }
+
+  .principle-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+
+  .principle-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .principle-body {
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+
+  .contact-band {
+    background: var(--navy);
+    padding: 5rem 2rem;
+  }
+
+  .contact-band-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-band h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-band h2 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .contact-band p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.64);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-meta {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  .footer-heading {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover { color: var(--navy); }
+
+  .copyright {
+    text-align: right;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-body { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+
+  @media (max-width: 960px) {
+    .what-grid,
+    .products-grid,
+    .about-inner,
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-inner { gap: 3rem; }
+    .copyright { text-align: left; }
+  }
+
   @media (max-width: 768px) {
-    .what-grid { grid-template-columns: 1fr; }
-    .products-grid { grid-template-columns: 1fr; }
-    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    nav { padding: 0 1.25rem; }
     .nav-links { display: none; }
-    .intern-banner-inner { flex-direction: column; text-align: center; }
-    .strip { gap: 2rem; }
+    .nav-logo { font-size: 1rem; }
+    .hero { min-height: auto; padding: 100px 1.25rem 4rem; }
+    section { padding: 4.5rem 1.25rem; }
+    .strip { gap: 1.8rem; padding: 1.5rem 1rem; }
+    .strip-item strong { font-size: 1.45rem; }
+    .what-grid,
+    .products-grid,
+    .about-inner,
+    .footer-inner {
+      grid-template-columns: 1fr;
+    }
+    .what-item,
+    .product-card {
+      padding: 1.65rem;
+    }
+    .product-card-top {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-band-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="logo/zenith-symbol.svg" alt="Zenith" style="height:28px;width:auto;vertical-align:middle;margin-right:0.5rem;">Zenith<span>.</span>Techsphere</a>
+  <a href="index.html" class="nav-logo"><img src="logo/zenith-symbol.svg" alt="Zenith">Zenith<span>.</span>Techsphere</a>
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#what-we-do">What we do</a>
     <a href="#products">Products</a>
-    <a href="internship.html" class="nav-cta">Internship Program</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </div>
 </nav>
 
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Hyderabad, India · Est. 2024</div>
-      <h1>Building <em>useful</em><br>software for India</h1>
-      <p class="hero-body">Zenith Techsphere is a registered product company focused on building practical, revenue-generating utility software for Indian users and businesses. We move fast, ship real products, and solve problems that are too small for large companies to care about — but too important for people to ignore.</p>
+      <div class="eyebrow">Hyderabad, India · Est. 2024</div>
+      <h1>Building focused software products for <em>India</em></h1>
+      <p class="hero-body">Zenith Techsphere Private Limited is a Hyderabad-based product company building practical software for Indian users, communities, and healthcare workflows.</p>
+      <p class="hero-body">We build lean, useful products that solve specific problems — from community book sharing to care-at-home coordination and focused digital utilities.</p>
       <div class="hero-actions">
-        <a href="#what-we-do" class="btn-primary">What we build</a>
-        <a href="internship.html" class="btn-secondary">Internship Program →</a>
+        <a href="#products" class="btn-primary">View Products</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
       </div>
     </div>
   </section>
 
-  <div class="strip">
+  <div class="strip" aria-label="Company facts">
     <div class="strip-item">
       <strong>2024</strong>
       <span>Founded</span>
     </div>
     <div class="strip-item">
+      <strong>3</strong>
+      <span>Active products</span>
+    </div>
+    <div class="strip-item">
       <strong>India</strong>
-      <span>Focus market</span>
+      <span>Primary market</span>
     </div>
     <div class="strip-item">
       <strong>Pvt. Ltd.</strong>
       <span>Registered company</span>
     </div>
-    <div class="strip-item">
-      <strong>Cohort 1</strong>
-      <span>Internship — 2026</span>
-    </div>
   </div>
 
   <section class="what" id="what-we-do">
     <div class="container">
-      <div class="section-eyebrow">What we do</div>
-      <h2 class="section-title">Two things, done well</h2>
-      <p class="section-body">We build products and we build people. Both with the same rigour.</p>
+      <div class="eyebrow">What we do</div>
+      <h2 class="section-title">Practical software, shipped in focused product lines</h2>
+      <p class="section-body">Zenith builds and operates products with a narrow job to do. Each product is kept close to real workflows: lending books inside communities, keeping a developer Mac clean, or coordinating care at home for families.</p>
 
       <div class="what-grid">
         <div class="what-item">
           <div class="what-num">01</div>
-          <div class="what-title">Product development</div>
-          <p class="what-body">We research, design, and ship micro-utility software for the Indian market — apps that solve specific, daily problems for millions of users. Our products are India-first: built around UPI, WhatsApp, joint families, and the realities of Indian digital life.</p>
+          <div class="what-title">Community tools</div>
+          <p class="what-body">BookClub Social helps people list physical books, join or create book clubs, request borrows, verify handovers, and track lending history.</p>
         </div>
         <div class="what-item">
           <div class="what-num">02</div>
-          <div class="what-title">Internship program</div>
-          <p class="what-body">We run a structured 8-week product internship for fresh graduates. Interns work in teams on real product briefs, ship working MVPs, and walk away with a live product, a GitHub portfolio, and an official certificate from a registered company — not a course completion badge.</p>
+          <div class="what-title">Focused utilities</div>
+          <p class="what-body">Prune is a native macOS utility for finding developer disk waste and handling cleanup through Gumroad distribution.</p>
         </div>
         <div class="what-item">
           <div class="what-num">03</div>
-          <div class="what-title">AI-assisted development</div>
-          <p class="what-body">Every product we build and every intern we train uses modern AI development tooling — GitHub Copilot, Bolt.new, and other tools that compress build time without cutting corners on quality. We believe the best software today is built with AI assistance, not in spite of it.</p>
+          <div class="what-title">Healthcare coordination</div>
+          <p class="what-body">Medify focuses on home-care discovery, visit coordination, patient records, family visibility, and operational handoffs.</p>
         </div>
         <div class="what-item">
           <div class="what-num">04</div>
-          <div class="what-title">Validated ideas only</div>
-          <p class="what-body">We do not build on hunches. Every product brief we develop is validated through community research, market signals, and first-principles analysis of real Indian pain points. If there is no clear monetisation path from day one, we do not build it.</p>
+          <div class="what-title">Lean product operations</div>
+          <p class="what-body">We keep product scope specific, test with users, and improve shipped software instead of relying on broad claims.</p>
         </div>
       </div>
     </div>
@@ -609,138 +747,124 @@
 
   <section class="products" id="products">
     <div class="container">
-      <div class="section-eyebrow">Our Products</div>
-      <h2 class="section-title">Software we've shipped</h2>
-      <p class="section-body">From hyperlocal community tools to AI-powered career platforms — each product is built to solve a specific, validated problem.</p>
+      <div class="eyebrow">Products</div>
+      <h2 class="section-title">Active products from Zenith</h2>
+      <p class="section-body">The product descriptions below use the public store pages, product metadata, and live landing pages available for each product.</p>
 
       <div class="products-grid">
-
-        <!-- BookShare -->
-        <div class="product-card">
+        <article class="product-card">
           <div class="product-card-top">
             <div>
-              <div class="product-category">Mobile App · Social / Marketplace</div>
-              <div class="product-name">BookShare</div>
-            </div>
-            <div class="product-status status-soon">Coming Soon</div>
-          </div>
-
-          <div class="product-tagline">A hyperlocal book-lending platform that turns idle bookshelves into a community library.</div>
-          <p class="product-desc">BookShare lets members of a community lend and borrow physical books within trusted social circles — a residential society, friend group, or book club. It handles the full transaction lifecycle from borrow request to return, with OTP-verified handovers, optional lending fees, due dates, and real-time in-transaction chat.</p>
-
-          <hr class="product-divider">
-          <div class="product-section-label">Key Features</div>
-          <div class="product-features">
-            <div class="feature-item"><div class="feature-dot"></div>Borrow &amp; lend physical books within your community or social circle</div>
-            <div class="feature-item"><div class="feature-dot"></div>OTP-verified handovers with optional lending fees and due dates</div>
-            <div class="feature-item"><div class="feature-dot"></div>Real-time in-transaction chat with typing indicators and read receipts</div>
-            <div class="feature-item"><div class="feature-dot"></div>Barcode &amp; ISBN scanning for instant book listings</div>
-            <div class="feature-item"><div class="feature-dot"></div>Mutual ratings, group-based discovery, and push notifications</div>
-          </div>
-
-          <hr class="product-divider">
-          <div class="product-section-label">Tech Stack</div>
-          <div class="product-stack">
-            <span class="stack-chip">Android</span>
-            <span class="stack-chip">Jetpack Compose</span>
-            <span class="stack-chip">CameraX + ML Kit</span>
-            <span class="stack-chip">Node.js</span>
-            <span class="stack-chip">TypeScript</span>
-            <span class="stack-chip">PostgreSQL</span>
-            <span class="stack-chip">Prisma</span>
-            <span class="stack-chip">Socket.IO</span>
-          </div>
-
-          <hr class="product-divider">
-          <div class="product-cta">
-            <span class="product-platform-note">Coming soon on Play Store &amp; App Store</span>
-          </div>
-        </div>
-
-        <!-- InterviewOS -->
-        <div class="product-card">
-          <div class="product-card-top">
-            <div>
-              <div class="product-category">Web App · EdTech / Career</div>
-              <div class="product-name">InterviewOS</div>
+              <div class="product-category">Android · Social</div>
+              <h3 class="product-name">BookClub Social</h3>
             </div>
             <div class="product-status status-live">Live</div>
           </div>
 
-          <div class="product-tagline">AI-powered interview preparation — personalized, structured, and trackable.</div>
-          <p class="product-desc">InterviewOS generates a personalized week-by-week interview prep curriculum in under 30 seconds using Claude AI. Calibrated to the user's target role, company tier, timeline, and weak areas — covering DSA, system design, behavioral prep, and mock interviews — with daily progress tracking via a readiness score, streak counter, and heatmap.</p>
+          <div class="product-tagline">Community book sharing, borrowing, and lending.</div>
+          <p class="product-desc">BookClub Social helps people share physical books within trusted communities. Users can add books manually or by scanning an ISBN barcode, create or join book clubs, lend books to others, manage borrow requests, verify handovers, chat during active transactions, and track lending history.</p>
 
-          <hr class="product-divider">
-          <div class="product-section-label">Key Features</div>
-          <div class="product-features">
-            <div class="feature-item"><div class="feature-dot"></div>AI-generated week-by-week prep plan in under 30 seconds</div>
-            <div class="feature-item"><div class="feature-dot"></div>Daily task engine with readiness score, streaks, and activity heatmap</div>
-            <div class="feature-item"><div class="feature-dot"></div>Covers DSA, system design, behavioral prep, and mock interviews</div>
-            <div class="feature-item"><div class="feature-dot"></div>Pro: ATS Resume Analyser, Interview Tracker, unlimited notes with file uploads</div>
-            <div class="feature-item"><div class="feature-dot"></div>Pro: AI daily email briefings and interview day reminders</div>
+          <div class="product-facts">
+            <div class="product-fact">Listed on Google Play by Zenith Techsphere Pvt Ltd.</div>
+            <div class="product-fact">Android package: com.zenithTechsphere.bookClubSocial.</div>
+            <div class="product-fact">Supports Google or phone sign-in, push notifications, and subscription limits for lending and groups.</div>
           </div>
 
-          <hr class="product-divider">
-          <div class="product-section-label">Tech Stack</div>
-          <div class="product-stack">
-            <span class="stack-chip">Next.js</span>
-            <span class="stack-chip">Supabase</span>
-            <span class="stack-chip">Stripe</span>
-            <span class="stack-chip">Claude AI</span>
-            <span class="stack-chip">Resend</span>
-            <span class="stack-chip">Render</span>
-          </div>
-
-          <hr class="product-divider">
           <div class="product-cta">
-            <a href="https://interviewos.zenith-techsphere.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.8rem; padding:0.65rem 1.5rem;">Visit InterviewOS →</a>
-            <span class="product-platform-note">$9/mo Pro · $4.99 one-time pack</span>
+            <a href="https://play.google.com/store/apps/details?id=com.zenithTechsphere.bookClubSocial&amp;pcampaignid=web_share" target="_blank" rel="noopener" class="btn-primary">View on Play Store</a>
+            <span class="product-note">Status: Live on Google Play</span>
           </div>
-        </div>
+        </article>
 
+        <article class="product-card">
+          <div class="product-card-top">
+            <div>
+              <div class="product-category">macOS · Utility</div>
+              <h3 class="product-name">Prune</h3>
+            </div>
+            <div class="product-status status-live">Live</div>
+          </div>
+
+          <div class="product-tagline">A focused digital product available on Gumroad.</div>
+          <p class="product-desc">Prune is a native macOS app for finding and safely removing developer disk waste such as node_modules, Xcode DerivedData, Docker volumes, Homebrew caches, logs, and abandoned projects. The Gumroad product page lists scanning and manual cleanup as free, with Pro features for background cleaning, scheduled cleanups, and storage forecasting.</p>
+
+          <div class="product-facts">
+            <div class="product-fact">Distributed as Prune Pro through Gumroad.</div>
+            <div class="product-fact">The product page lists a one-time Pro purchase and no telemetry.</div>
+            <div class="product-fact">Cleanup moves items to Trash instead of hard-deleting them.</div>
+          </div>
+
+          <div class="product-cta">
+            <a href="https://zenithdev47.gumroad.com/l/prune" target="_blank" rel="noopener" class="btn-primary">View Prune</a>
+            <span class="product-note">Status: Live on Gumroad</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card-top">
+            <div>
+              <div class="product-category">Healthcare · Home care</div>
+              <h3 class="product-name">Medify</h3>
+            </div>
+            <div class="product-status status-test">Testing</div>
+          </div>
+
+          <div class="product-tagline">Care-at-home coordination platform.</div>
+          <p class="product-desc">Medify is a healthcare product focused on home-care workflows, patient coordination, caregiver operations, and family visibility. Its landing page describes verified doctors, nurses, physiotherapists, medicine help, urgent support, shared patient records, visit notes, and family-facing care updates.</p>
+
+          <div class="product-facts">
+            <div class="product-fact">Public landing page is available at medify.zenith-techsphere.com.</div>
+            <div class="product-fact">Mobile apps are in internal testing groups on Android and iOS before wider release.</div>
+            <div class="product-fact">Care flows include booking, visit tracking, medicine needs, reports, payments, and next steps.</div>
+          </div>
+
+          <div class="product-cta">
+            <a href="https://medify.zenith-techsphere.com/" target="_blank" rel="noopener" class="btn-primary">Visit Medify</a>
+            <span class="product-note">Status: Internal testing on Play Store and App Store</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="about-inner">
-        <div class="about-left">
-          <div class="section-eyebrow">About Zenith</div>
-          <h2 class="section-title">A small company with a specific point of view</h2>
-          <p class="section-body">Zenith Techsphere Private Limited is registered in India and headquartered in Hyderabad. We are a lean team focused on one thing: building software that solves real problems for real Indians — and training the next generation of Indian product builders to do the same.</p>
-          <br>
-          <p class="section-body">We believe the best product ideas are not glamorous. They are the ones that save someone 20 minutes a month, prevent a missed medicine dose, or help a woman running a home tiffin service get paid on time. That is the market we work in.</p>
+        <div class="about-copy">
+          <div class="eyebrow">About</div>
+          <h2 class="section-title">A product company building specific software assets</h2>
+          <p class="section-body">Zenith Techsphere Private Limited is registered in India and headquartered in Hyderabad. We build software products that solve specific real-world problems.</p>
+          <p class="section-body">We are not trying to look large. We are trying to become useful. Our focus is simple: build products, test them with users, improve them, and create durable software assets over time.</p>
+          <p class="section-body">We prefer shipped products over pitch decks, practical use cases over vague innovation claims, and clear monetization over vanity traffic.</p>
         </div>
-        <div class="about-right">
-          <div class="about-values">
-            <div class="about-value">
-              <div class="value-dot"></div>
-              <div>
-                <div class="value-title">Ship over theorise</div>
-                <p class="value-body">A working MVP with 3 users beats a perfect design with zero. We bias toward action, iteration, and real-world feedback over extended planning cycles.</p>
-              </div>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-dot"></div>
+            <div>
+              <div class="principle-title">Specific use cases</div>
+              <p class="principle-body">We keep each product centered on a concrete job: borrowing books, cleaning developer storage, or coordinating care at home.</p>
             </div>
-            <div class="about-value">
-              <div class="value-dot"></div>
-              <div>
-                <div class="value-title">India-first, always</div>
-                <p class="value-body">We do not adapt Western products for India. We start from Indian behaviour — WhatsApp as infrastructure, UPI as the default, the joint family as the unit of decision-making.</p>
-              </div>
+          </div>
+          <div class="principle">
+            <div class="principle-dot"></div>
+            <div>
+              <div class="principle-title">Shipped products</div>
+              <p class="principle-body">BookClub Social is live on Google Play, Prune is live on Gumroad, and Medify has a public landing page while the apps are tested internally.</p>
             </div>
-            <div class="about-value">
-              <div class="value-dot"></div>
-              <div>
-                <div class="value-title">Transparent by default</div>
-                <p class="value-body">Whether it is our internship program fees, our IP agreements, or our selection criteria — we say what we mean and document what we say.</p>
-              </div>
+          </div>
+          <div class="principle">
+            <div class="principle-dot"></div>
+            <div>
+              <div class="principle-title">India-first workflows</div>
+              <p class="principle-body">The company focuses on Indian users, communities, and healthcare workflows rather than generic product categories.</p>
             </div>
-            <div class="about-value">
-              <div class="value-dot"></div>
-              <div>
-                <div class="value-title">Build people, not just products</div>
-                <p class="value-body">The internship program is not a revenue line. It is how we develop the builders who will eventually lead our products and teams.</p>
-              </div>
+          </div>
+          <div class="principle">
+            <div class="principle-dot"></div>
+            <div>
+              <div class="principle-title">Clear operations</div>
+              <p class="principle-body">We describe product status plainly: live products are marked live, and products in testing are marked as internal testing.</p>
             </div>
           </div>
         </div>
@@ -748,30 +872,39 @@
     </div>
   </section>
 
-  <div class="intern-banner">
-    <div class="intern-banner-inner">
+  <section class="contact-band" id="contact" aria-label="Contact Zenith Techsphere">
+    <div class="contact-band-inner">
       <div>
-        <h2>Cohort 1 applications<br>are <em>open now</em></h2>
-        <p>20 seats. 8 weeks. A real product, a real certificate, and a real internship tag on your LinkedIn. Top 4 performers get a paid mentor role in Cohort 2.</p>
+        <h2>Building products with a <em>narrow job</em> and a clear user.</h2>
+        <p>For product, partnership, or company inquiries, contact Zenith Techsphere Private Limited in Hyderabad.</p>
       </div>
-      <a href="internship.html" class="btn-accent">View the internship →</a>
+      <a href="mailto:info@zenith-techsphere.com" class="btn-accent">Contact Us</a>
     </div>
-  </div>
+  </section>
 </main>
 
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-logo">Zenith<span>.</span>Techsphere</div>
-      <p class="footer-meta" style="margin-top:0.5rem;">Zenith Techsphere Private Limited<br>Hyderabad, Telangana, India<br>CIN: U62091TS2024PTC189853</p>
+      <p class="footer-meta">Zenith Techsphere Private Limited<br>Hyderabad, Telangana, India<br>CIN: U62091TS2024PTC189853</p>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="internship.html">Internship</a>
+    <div>
+      <div class="footer-heading">Products</div>
+      <div class="footer-links">
+        <a href="https://play.google.com/store/apps/details?id=com.zenithTechsphere.bookClubSocial&amp;pcampaignid=web_share" target="_blank" rel="noopener">BookClub Social</a>
+        <a href="https://zenithdev47.gumroad.com/l/prune" target="_blank" rel="noopener">Prune</a>
+        <a href="https://medify.zenith-techsphere.com/" target="_blank" rel="noopener">Medify</a>
+      </div>
     </div>
-    <p class="footer-meta" style="text-align:right;">© 2026 Zenith Techsphere Pvt. Ltd.<br>All rights reserved.</p>
+    <div>
+      <div class="footer-heading">Company</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="footer-meta copyright">© 2026 Zenith Techsphere Pvt. Ltd.<br>All rights reserved.</p>
   </div>
 </footer>
 
